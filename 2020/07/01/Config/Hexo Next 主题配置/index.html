@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lrxc.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="官网教程：https:&#x2F;&#x2F;theme-next.iissnan.com&#x2F;getting-started.html 说明12在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo Next 主题配置">
+<meta property="og:url" content="https://lrxc.github.io/blog/2020/07/01/Config/Hexo%20Next%20%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="River Flows In You">
+<meta property="og:description" content="官网教程：https:&#x2F;&#x2F;theme-next.iissnan.com&#x2F;getting-started.html 说明12在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-01T08:01:33.000Z">
+<meta property="article:modified_time" content="2021-02-02T01:28:10.000Z">
+<meta property="article:author" content="Lrxc">
+<meta property="article:tag" content="config">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://lrxc.github.io/blog/2020/07/01/Config/Hexo%20Next%20%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Hexo Next 主题配置 | River Flows In You</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">River Flows In You</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lrxc.github.io/blog/2020/07/01/Config/Hexo%20Next%20%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/ico.jpg">
+      <meta itemprop="name" content="Lrxc">
+      <meta itemprop="description" content="think about life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="River Flows In You">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo Next 主题配置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-01 16:01:33" itemprop="dateCreated datePublished" datetime="2020-07-01T16:01:33+08:00">2020-07-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-02 09:28:10" itemprop="dateModified" datetime="2021-02-02T09:28:10+08:00">2021-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/Config/" itemprop="url" rel="index"><span itemprop="name">Config</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer" />
+
+
+<p>官网教程：<a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">https://theme-next.iissnan.com/getting-started.html</a></p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</span><br><span class="line">为了描述方便，在以下说明中，将前者称为 站点配置文件， 后者称为 主题配置文件</span><br></pre></td></tr></table></figure>
+
+<h4 id="一-下载主题"><a href="#一-下载主题" class="headerlink" title="一 下载主题"></a>一 下载主题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+<h4 id="二-启用主题"><a href="#二-启用主题" class="headerlink" title="二 启用主题"></a>二 启用主题</h4><p>与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 <strong>站点配置文件</strong>， 找到 <code>theme</code> 字段，并将其值更改为 <code>next</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<h4 id="三-编辑菜单"><a href="#三-编辑菜单" class="headerlink" title="三 编辑菜单"></a>三 编辑菜单</h4><p>启用需要的菜单</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;----|| 前面是路径,后面是图标ico</span><br><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  categories: &#x2F; categories&#x2F;|| th</span><br><span class="line">  tags: &#x2F;tags&#x2F; || tags</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br><span class="line">  #schedule: &#x2F;schedule&#x2F; || calendar</span><br><span class="line">  #sitemap: &#x2F;sitemap.xml || sitemap</span><br><span class="line">  #commonweal: &#x2F;404&#x2F; || heartbeat</span><br></pre></td></tr></table></figure>
+
+<p>手动创建对应页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &#39;categories&#39;</span><br><span class="line">hexo new page &#39;tags&#39;</span><br><span class="line">hexo new page &#39;about&#39;</span><br></pre></td></tr></table></figure>
+
+<p>\source路径下对应名称的index.md增加type属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2018-07-30 16:28:33</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2018-07-30 16:28:54</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: about</span><br><span class="line">date: 2018-07-30 16:29:13</span><br><span class="line">type: about</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>新建一篇文章</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;test&quot;</span><br></pre></td></tr></table></figure>
+
+<p>编辑 \source_posts\test.md 文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: one</span><br><span class="line">date: 2020-07-01 16:01:33</span><br><span class="line">tags: [标签1,标签2]</span><br><span class="line">categories: </span><br><span class="line">- Java分类</span><br><span class="line">- Java分类的二级菜单</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>刷新浏览器，就可以看到效果了</p>
+<h4 id="六-主题设置"><a href="#六-主题设置" class="headerlink" title="六 主题设置"></a>六 主题设置</h4><p>默认针对主题配置文件</p>
+<h5 id="1-页面样式"><a href="#1-页面样式" class="headerlink" title="1. 页面样式"></a>1. 页面样式</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scheme: Muse    <span class="comment">#上下布局</span></span><br><span class="line">scheme: Pisces  <span class="comment">#左右布局</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="2-设置语言"><a href="#2-设置语言" class="headerlink" title="2. 设置语言"></a>2. 设置语言</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;站点配置文件</span><br><span class="line">language: zh-CN</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-头像"><a href="#3-头像" class="headerlink" title="3. 头像"></a>3. 头像</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">avatar:</span><br><span class="line">  url: &#x2F;images&#x2F;ico.jpg #图片路径</span><br><span class="line">  rounded: true  # 圆角</span><br><span class="line">  rotated: true  # 旋转</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-友情链接"><a href="#4-友情链接" class="headerlink" title="4. 友情链接"></a>4. 友情链接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">links:</span><br><span class="line">  Github: https:&#x2F;&#x2F;github.com&#x2F;Lrxc</span><br><span class="line">  Weibo: http:&#x2F;&#x2F;example.com&#x2F;</span><br><span class="line">  WeChat: http:&#x2F;&#x2F;example.com&#x2F;</span><br><span class="line">  </span><br><span class="line">social_icons:</span><br><span class="line">  enable: true      # 显示社交图标</span><br><span class="line">  icons_only: false # 只显示图标，不显示文字</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-底部"><a href="#5-底部" class="headerlink" title="5. 底部"></a>5. 底部</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">footer:</span><br><span class="line">  since: 2018        # 建站开始时间</span><br><span class="line">  icon:</span><br><span class="line">    name: user       # 设置 建站初始时间和至今时间中间的图标，默认是一个&#39;小人像&#39;，更改user为heart可以变成一个心</span><br><span class="line">    animated: true</span><br><span class="line">    color: &quot;#808080&quot; # 更改图标的颜色，红色为&#39;#ff0000&#39;</span><br><span class="line">  powered:</span><br><span class="line">    enable: true     # 开启hexo驱动</span><br><span class="line">    version: true    # 开启hexo版本号</span><br><span class="line">  theme:</span><br><span class="line">    enable: true     # 开启主题驱动</span><br><span class="line">    version: true    # 开启主题版本号</span><br><span class="line">  custom_text: Hosted by &lt;a target&#x3D;&quot;_blank&quot; rel&#x3D;&quot;external nofollow&quot; href&#x3D;&quot;https:&#x2F;&#x2F;pages.coding.me&quot;&gt;&lt;b&gt;Coding Pages&lt;&#x2F;b&gt;&lt;&#x2F;a&gt; # 这里的底部标识是为了添加coding page服务时的版权声明 打开注释就可以看到底部有一个 hosted by coding pages</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-文章自动折叠"><a href="#6-文章自动折叠" class="headerlink" title="6. 文章自动折叠"></a>6. 文章自动折叠</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true #自动折叠文章</span><br><span class="line">  length: 150  #显示行数</span><br></pre></td></tr></table></figure>
+
+<h5 id="7-首页显示几篇文章"><a href="#7-首页显示几篇文章" class="headerlink" title="7. 首页显示几篇文章"></a>7. 首页显示几篇文章</h5><p>站点配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">index_generator:</span><br><span class="line">  per_page: 6  #一页显示几条文章</span><br></pre></td></tr></table></figure>
+
+<h5 id="8-页面统计人数"><a href="#8-页面统计人数" class="headerlink" title="8. 页面统计人数"></a>8. 页面统计人数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  enable: false              # 设true 开启</span><br><span class="line">  total_visitors: true       # 总阅读人数（uv数）</span><br><span class="line">  total_visitors_icon: user  # 阅读总人数的图标</span><br><span class="line">  total_views: true          # 总阅读次数（pv数）</span><br><span class="line">  total_views_icon: eye      # 阅读总次数的图标</span><br><span class="line">  post_views: true           # 开启内容阅读次数</span><br><span class="line">  post_views_icon: eye       # 内容页阅读数的图标</span><br></pre></td></tr></table></figure>
+
+<h5 id="9-本地搜索功能"><a href="#9-本地搜索功能" class="headerlink" title="9. 本地搜索功能"></a>9. 本地搜索功能</h5><p>安装搜索插件： <code>hexo-generator-searchdb</code>，根目录下执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>站点配置文件_config.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+
+<p>主题配置文件_config.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+
+<h5 id="10-字数统计，阅读时长"><a href="#10-字数统计，阅读时长" class="headerlink" title="10. 字数统计，阅读时长"></a>10. 字数统计，阅读时长</h5><p>安装插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+
+<p>主题配置文件<code>_config.yml</code> 修改如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true  # false会显示一行</span><br><span class="line">  item_text_post: true  # 显示属性名称,设为false后只显示图标和统计数字,不显示属性的文字</span><br><span class="line">  item_text_total: true # 底部footer是否显示字数统计属性文字</span><br><span class="line">  awl: 4                # 计算字数的一个设置,没设置过</span><br><span class="line">  wpm: 275              # 一分钟阅读的字数</span><br></pre></td></tr></table></figure>
+
+<p>站点配置文件<code>_config.yml</code> 新增如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line"> #文章内是否显示</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line"> # 网页底部是否显示</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br></pre></td></tr></table></figure>
+
+<h5 id="11-内容页里的代码块新增复制按钮"><a href="#11-内容页里的代码块新增复制按钮" class="headerlink" title="11. 内容页里的代码块新增复制按钮"></a>11. 内容页里的代码块新增复制按钮</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  copy_button:</span><br><span class="line">    enable: false      # 增加复制按钮的开关</span><br><span class="line">    show_result: false # 点击复制完后是否显示 复制成功 结果提示</span><br></pre></td></tr></table></figure>
+
+<h5 id="12-配置微信，支付宝打赏"><a href="#12-配置微信，支付宝打赏" class="headerlink" title="12. 配置微信，支付宝打赏"></a>12. 配置微信，支付宝打赏</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Reward</span><br><span class="line">reward_comment:                   # 打赏描述</span><br><span class="line">wechatpay: &#x2F;images&#x2F;wechatpay.png  # 微信支付的二维码图片地址</span><br><span class="line">alipay: &#x2F;images&#x2F;alipay.png        # 支付宝的地址</span><br><span class="line">#bitcoin: &#x2F;images&#x2F;bitcoin.png     # 比特币地址</span><br></pre></td></tr></table></figure>
+
+<h5 id="13-声明文章原创"><a href="#13-声明文章原创" class="headerlink" title="13. 声明文章原创"></a>13. 声明文章原创</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: false</span><br><span class="line">  post: true       # 默认显示版权信息</span><br><span class="line">  language:</span><br></pre></td></tr></table></figure>
+
+<h5 id="14-相关文章推荐"><a href="#14-相关文章推荐" class="headerlink" title="14. 相关文章推荐"></a>14. 相关文章推荐</h5><p>安装推荐文章的插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-related-popular-posts --save</span><br></pre></td></tr></table></figure>
+
+<p>主题配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">related_posts:</span><br><span class="line">  enable: true</span><br><span class="line">  title: 相关文章推荐      # 属性的命名</span><br><span class="line">  display_in_home: false # false代表首页不显示</span><br><span class="line">  params:</span><br><span class="line">    maxCount: 5          # 最多5条</span><br><span class="line">    #PPMixingRate: 0.0   # 相关度</span><br><span class="line">    #isDate: true        # 是否显示日期</span><br><span class="line">    #isImage: false      # 是否显示配图</span><br><span class="line">    isExcerpt: false     # 是否显示摘要</span><br></pre></td></tr></table></figure>
+
+<h5 id="15-背景动画设置"><a href="#15-背景动画设置" class="headerlink" title="15. 背景动画设置"></a>15. 背景动画设置</h5><h4 id="Canvas-nest-风格"><a href="#Canvas-nest-风格" class="headerlink" title="Canvas-nest 风格"></a>Canvas-nest 风格</h4><p>进入 <code>theme/next</code> 目录，执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-canvas-nest source&#x2F;lib&#x2F;canvas-nest</span><br></pre></td></tr></table></figure>
+
+<p>实际上就是将一个显示动效的 js 文件 clone 到对应目录。</p>
+<p>这时将配置文件<code>_config.yml</code> 中的 <code>canvas_nest: false</code> 改为 <code>canvas_nest: true</code> 才能真正生效。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Lrxc
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lrxc.github.io/blog/2020/07/01/Config/Hexo%20Next%20%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" title="Hexo Next 主题配置">https://lrxc.github.io/blog/2020/07/01/Config/Hexo Next 主题配置/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/config/" rel="tag"># config</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/07/01/Config/Github%20Page%20Hexo%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="prev" title="Github Page Hexo 搭建个人博客">
+      <i class="fa fa-chevron-left"></i> Github Page Hexo 搭建个人博客
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/07/01/Config/CICD-%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/" rel="next" title="CICD-打包流程">
+      CICD-打包流程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-下载主题"><span class="nav-number">1.0.1.</span> <span class="nav-text">一 下载主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二-启用主题"><span class="nav-number">1.0.2.</span> <span class="nav-text">二 启用主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三-编辑菜单"><span class="nav-number">1.0.3.</span> <span class="nav-text">三 编辑菜单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六-主题设置"><span class="nav-number">1.0.4.</span> <span class="nav-text">六 主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-页面样式"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">1. 页面样式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-设置语言"><span class="nav-number">1.0.4.2.</span> <span class="nav-text">2. 设置语言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-头像"><span class="nav-number">1.0.4.3.</span> <span class="nav-text">3. 头像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-友情链接"><span class="nav-number">1.0.4.4.</span> <span class="nav-text">4. 友情链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-底部"><span class="nav-number">1.0.4.5.</span> <span class="nav-text">5. 底部</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-文章自动折叠"><span class="nav-number">1.0.4.6.</span> <span class="nav-text">6. 文章自动折叠</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-首页显示几篇文章"><span class="nav-number">1.0.4.7.</span> <span class="nav-text">7. 首页显示几篇文章</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-页面统计人数"><span class="nav-number">1.0.4.8.</span> <span class="nav-text">8. 页面统计人数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-本地搜索功能"><span class="nav-number">1.0.4.9.</span> <span class="nav-text">9. 本地搜索功能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-字数统计，阅读时长"><span class="nav-number">1.0.4.10.</span> <span class="nav-text">10. 字数统计，阅读时长</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-内容页里的代码块新增复制按钮"><span class="nav-number">1.0.4.11.</span> <span class="nav-text">11. 内容页里的代码块新增复制按钮</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#12-配置微信，支付宝打赏"><span class="nav-number">1.0.4.12.</span> <span class="nav-text">12. 配置微信，支付宝打赏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#13-声明文章原创"><span class="nav-number">1.0.4.13.</span> <span class="nav-text">13. 声明文章原创</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#14-相关文章推荐"><span class="nav-number">1.0.4.14.</span> <span class="nav-text">14. 相关文章推荐</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#15-背景动画设置"><span class="nav-number">1.0.4.15.</span> <span class="nav-text">15. 背景动画设置</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Canvas-nest-风格"><span class="nav-number">1.0.5.</span> <span class="nav-text">Canvas-nest 风格</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Lrxc"
+      src="/blog/images/ico.jpg">
+  <p class="site-author-name" itemprop="name">Lrxc</p>
+  <div class="site-description" itemprop="description">think about life</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">138</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/Lrxc" title="https:&#x2F;&#x2F;github.com&#x2F;Lrxc" rel="noopener" target="_blank">Github</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://example.com/" title="http:&#x2F;&#x2F;example.com&#x2F;" rel="noopener" target="_blank">Weibo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://example.com/" title="http:&#x2F;&#x2F;example.com&#x2F;" rel="noopener" target="_blank">WeChat</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lrxc</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

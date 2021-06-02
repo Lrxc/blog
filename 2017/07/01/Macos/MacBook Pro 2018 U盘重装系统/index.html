@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lrxc.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="##　参数配置  mbp 2018  Ｕ盘16G  一 制定启动盘 官方教程：https:&#x2F;&#x2F;support.apple.com&#x2F;zh-cn&#x2F;HT201372   应用商店下载需要的MacOS，下载成功后不需要点击安装  插入U盘，格式化为 Mac OS 扩展格式，名字对应下面的 MyVolume     制作启动盘，终端执行以下命令 Catalina 1sudo &#x2F;Applica">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MacBook Pro 2018 U盘重装系统">
+<meta property="og:url" content="https://lrxc.github.io/blog/2017/07/01/Macos/MacBook%20Pro%202018%20U%E7%9B%98%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="River Flows In You">
+<meta property="og:description" content="##　参数配置  mbp 2018  Ｕ盘16G  一 制定启动盘 官方教程：https:&#x2F;&#x2F;support.apple.com&#x2F;zh-cn&#x2F;HT201372   应用商店下载需要的MacOS，下载成功后不需要点击安装  插入U盘，格式化为 Mac OS 扩展格式，名字对应下面的 MyVolume     制作启动盘，终端执行以下命令 Catalina 1sudo &#x2F;Applica">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2803682-895acf29deecfa9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macos/Big-Sur/macos-big-sur-terminal-create-bootable-installer.jpg">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2803682-e1d6fd137f66ecc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="article:published_time" content="2017-07-01T08:01:33.000Z">
+<meta property="article:modified_time" content="2021-03-06T02:23:52.000Z">
+<meta property="article:author" content="Lrxc">
+<meta property="article:tag" content="macos">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2803682-895acf29deecfa9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+<link rel="canonical" href="https://lrxc.github.io/blog/2017/07/01/Macos/MacBook%20Pro%202018%20U%E7%9B%98%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>MacBook Pro 2018 U盘重装系统 | River Flows In You</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">River Flows In You</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lrxc.github.io/blog/2017/07/01/Macos/MacBook%20Pro%202018%20U%E7%9B%98%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/ico.jpg">
+      <meta itemprop="name" content="Lrxc">
+      <meta itemprop="description" content="think about life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="River Flows In You">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MacBook Pro 2018 U盘重装系统
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-07-01 16:01:33" itemprop="dateCreated datePublished" datetime="2017-07-01T16:01:33+08:00">2017-07-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-06 10:23:52" itemprop="dateModified" datetime="2021-03-06T10:23:52+08:00">2021-03-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/MacOS/" itemprop="url" rel="index"><span itemprop="name">MacOS</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer" />
+
+
+<p>##　参数配置</p>
+<ul>
+<li>mbp 2018 </li>
+<li>Ｕ盘16G</li>
+</ul>
+<h2 id="一-制定启动盘"><a href="#一-制定启动盘" class="headerlink" title="一 制定启动盘"></a>一 制定启动盘</h2><ul>
+<li>官方教程：<a href="https://support.apple.com/zh-cn/HT201372" target="_blank" rel="noopener">https://support.apple.com/zh-cn/HT201372</a></li>
+</ul>
+<ol>
+<li><p>应用商店下载需要的MacOS，下载成功后不需要点击安装</p>
+</li>
+<li><p>插入U盘，格式化为 Mac OS 扩展格式，名字对应下面的 <strong>MyVolume</strong></p>
+</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/2803682-895acf29deecfa9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ol start="3">
+<li><p>制作启动盘，终端执行以下命令</p>
+<p><strong>Catalina</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo &#x2F;Applications&#x2F;Install\ macOS\ Catalina.app&#x2F;Contents&#x2F;Resources&#x2F;createinstallmedia --volume &#x2F;Volumes&#x2F;MyVolume</span><br></pre></td></tr></table></figure>
+
+<p><strong>Mojave</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo &#x2F;Applications&#x2F;Install\ macOS\ Mojave.app&#x2F;Contents&#x2F;Resources&#x2F;createinstallmedia --volume &#x2F;Volumes&#x2F;MyVolume</span><br></pre></td></tr></table></figure>
+
+<p><strong>High Sierra</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo &#x2F;Applications&#x2F;Install\ macOS\ High\ Sierra.app&#x2F;Contents&#x2F;Resources&#x2F;createinstallmedia --volume &#x2F;Volumes&#x2F;MyVolume</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+   <img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macos/Big-Sur/macos-big-sur-terminal-create-bootable-installer.jpg" style="zoom: 67%;" />
+
+<h2 id="二-设置Secure-Boot-安全启动"><a href="#二-设置Secure-Boot-安全启动" class="headerlink" title="二 设置Secure Boot(安全启动)"></a>二 设置Secure Boot(安全启动)</h2><ol>
+<li>开机 Command (⌘)-R，菜单栏中选取“实用工具”&gt;“启动安全性实用工具”。选择无安全性、允许从外部介质安装<br><img src="https://upload-images.jianshu.io/upload_images/2803682-e1d6fd137f66ecc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>官方教程：<a href="https://support.apple.com/zh-cn/HT208198" target="_blank" rel="noopener">https://support.apple.com/zh-cn/HT208198</a></li>
+</ol>
+<h2 id="三-开始安装"><a href="#三-开始安装" class="headerlink" title="三 开始安装"></a>三 开始安装</h2><ol>
+<li><p>开机按option，选择U盘，下一步即可</p>
+</li>
+<li><p>安装旧版MacOS报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 先关闭电脑的网络, 如关闭右上角的WIFI或者拔掉网线</span><br><span class="line">2. 终端里面修改时间</span><br><span class="line">date 122014102015.30</span><br><span class="line">上面的办法修改后还是不行，那么输入下面的代码试试</span><br><span class="line">date 062614102014.30</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="四-在线恢复模式"><a href="#四-在线恢复模式" class="headerlink" title="四 在线恢复模式"></a>四 在线恢复模式</h2><p>官方教程: <a href="https://support.apple.com/zh-cn/HT204904" target="_blank" rel="noopener">https://support.apple.com/zh-cn/HT204904</a></p>
+<ol>
+<li>Command (⌘)-R 当前系统版本</li>
+<li>Option-Command-R 安装最新版本</li>
+<li>Shift-Option-Command-R  安装出厂版本</li>
+</ol>
+<p>以上三种恢复模式，关机后按下组合键，即可进入小地球页面，连上wifi，自动恢复即可开始</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在线恢复失败：</span><br><span class="line">自动进入恢复模式(小地球)，连接WiFi没反应，等会报错2002或其他各种失败问题</span><br><span class="line">解决方法：当前wifi有问题，切换wifi，或者手机开个热点就行了</span><br></pre></td></tr></table></figure>
+
+<h2 id="附录：MacOS原版镜像下载"><a href="#附录：MacOS原版镜像下载" class="headerlink" title="附录：MacOS原版镜像下载"></a>附录：MacOS原版镜像下载</h2><h4 id="macOS-Big-Sur-11-0-1（20B29）"><a href="#macOS-Big-Sur-11-0-1（20B29）" class="headerlink" title="macOS Big Sur 11.0.1（20B29）"></a>macOS Big Sur 11.0.1（20B29）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;s1.mac2x.com&#x2F;macos&#x2F;11.0.x&#x2F;Install.macOS.Big.Sur.11.0.1.20B29.16.1.03.dmg</span><br></pre></td></tr></table></figure>
+<h4 id="macOS-Catalina-10-15-7-19H2-："><a href="#macOS-Catalina-10-15-7-19H2-：" class="headerlink" title="macOS Catalina 10.15.7 (19H2)："></a>macOS Catalina 10.15.7 (19H2)：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;s1.mac2x.com&#x2F;macos&#x2F;10.15.x&#x2F;Install.macOS.Catalina.10.15.7.02.19H2.dmg</span><br></pre></td></tr></table></figure>
+
+<h4 id="macOS-Mojave-10-14-6-18G103-："><a href="#macOS-Mojave-10-14-6-18G103-：" class="headerlink" title="macOS Mojave 10.14.6 (18G103)："></a>macOS Mojave 10.14.6 (18G103)：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">magnet:?xt&#x3D;urn:btih:daa09898b2764c9a513aee76c67d9f27c9ec6159</span><br></pre></td></tr></table></figure>
+
+<h4 id="macOS-High-Sierra-10-13-6-17G2208"><a href="#macOS-High-Sierra-10-13-6-17G2208" class="headerlink" title="macOS High Sierra 10.13.6 (17G2208):"></a>macOS High Sierra 10.13.6 (17G2208):</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Lrxc
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lrxc.github.io/blog/2017/07/01/Macos/MacBook%20Pro%202018%20U%E7%9B%98%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/" title="MacBook Pro 2018 U盘重装系统">https://lrxc.github.io/blog/2017/07/01/Macos/MacBook Pro 2018 U盘重装系统/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/macos/" rel="tag"># macos</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2017/07/01/Sql/MySql%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="prev" title="MySql 常用命令">
+      <i class="fa fa-chevron-left"></i> MySql 常用命令
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2017/07/01/Macos/MacOS-Homebrew-Jdk-Node/" rel="next" title="MacOS-Homebrew-Jdk-Node">
+      MacOS-Homebrew-Jdk-Node <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-制定启动盘"><span class="nav-number">1.</span> <span class="nav-text">一 制定启动盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-设置Secure-Boot-安全启动"><span class="nav-number">2.</span> <span class="nav-text">二 设置Secure Boot(安全启动)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-开始安装"><span class="nav-number">3.</span> <span class="nav-text">三 开始安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-在线恢复模式"><span class="nav-number">4.</span> <span class="nav-text">四 在线恢复模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录：MacOS原版镜像下载"><span class="nav-number">5.</span> <span class="nav-text">附录：MacOS原版镜像下载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#macOS-Big-Sur-11-0-1（20B29）"><span class="nav-number">5.0.1.</span> <span class="nav-text">macOS Big Sur 11.0.1（20B29）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#macOS-Catalina-10-15-7-19H2-："><span class="nav-number">5.0.2.</span> <span class="nav-text">macOS Catalina 10.15.7 (19H2)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#macOS-Mojave-10-14-6-18G103-："><span class="nav-number">5.0.3.</span> <span class="nav-text">macOS Mojave 10.14.6 (18G103)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#macOS-High-Sierra-10-13-6-17G2208"><span class="nav-number">5.0.4.</span> <span class="nav-text">macOS High Sierra 10.13.6 (17G2208):</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Lrxc"
+      src="/blog/images/ico.jpg">
+  <p class="site-author-name" itemprop="name">Lrxc</p>
+  <div class="site-description" itemprop="description">think about life</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">138</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/Lrxc" title="https:&#x2F;&#x2F;github.com&#x2F;Lrxc" rel="noopener" target="_blank">Github</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://example.com/" title="http:&#x2F;&#x2F;example.com&#x2F;" rel="noopener" target="_blank">Weibo</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://example.com/" title="http:&#x2F;&#x2F;example.com&#x2F;" rel="noopener" target="_blank">WeChat</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lrxc</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
